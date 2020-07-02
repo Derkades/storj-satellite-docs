@@ -1,6 +1,8 @@
 # Storj satellite documentation
 
-[Storj labs](https://storj.io) does not provide documentation for running it's satellite software. I would like to run my own satellite, here I am writing down my thoughts as a try to figure out how it works. Please contribute if you know something!!
+[Storj labs](https://storj.io) does not provide documentation for running its satellite software. I would like to run my own satellite, here I am writing down my thoughts as a try to figure out how it works. Please contribute if you know something!!
+
+This repository is not affiliated with or endorsed by Storj labs. This is my adventure, read at your own risk.
 
 ## Software and dependencies
 
