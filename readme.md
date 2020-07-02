@@ -4,6 +4,8 @@
 
 Copy the `docker-compose.yaml` file from the repo and optionally adjust some parameters.
 
+For the satellite version tag, go to https://hub.docker.com/r/storjlabs/satellite/tags and use the search box to find the tag for the latest stable release (these correspond which storage node version numbers, see the github releases page)
+
 Start the satellite to generate folders and configuration files. It will crash because it's not configured yet.
 
 Use `docker-compose up -d` to start everything
@@ -49,3 +51,8 @@ INFO    payments.stripe:clearing        running account balance update cycle
 INFO    payments.stripe:clearing        running transactions update cycle
 INFO    payments.stripe:clearing        running account balance update cycl
 ```
+
+## Unanswered questions
+
+* How to get nodes to use this satellite?
+* How to "access" the satellite for users and admins, I think there should be some web interface like europe-west-1.tardigrade.io?
