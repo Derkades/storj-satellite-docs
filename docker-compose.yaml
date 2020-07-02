@@ -1,0 +1,27 @@
+version: '2'
+
+services:
+
+  redis:
+    image: redis:alpine
+    command: ['redis-server', '--appendonly', 'yes']
+    volumes: ['./redis:/data']
+
+  postgres:
+    image: postgres
+    volumes: ['./postgres:/var/lib/postgresql']
+    environment:
+      POSTGRES_PASSWORD: '**'
+      POSTGRES_USER: postgres
+      POSTGRES_DB: satellite
+
+  sat:
+    image: storjlabs/satellite:5e495f4b-v1.6.4-go1.13.8
+    volumes: ['./satellite:/root/.local/share/storj']
+    ports:
+      - '7777:7777'
+      - '10100:10100'
+      - '8090:8090'
+    # environment:
+    #   SATELLITE_MIGRATE: 'true'
+    depends_on: [storj_redis, storj_postgres]
