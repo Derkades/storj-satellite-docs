@@ -54,5 +54,27 @@ INFO    payments.stripe:clearing        running account balance update cycl
 
 ## Unanswered questions
 
-* How to get nodes to use this satellite?
-* How to "access" the satellite for users and admins, I think there should be some web interface like europe-west-1.tardigrade.io?
+### How to get nodes to use this satellite?
+
+### How to "access" the satellite for users and admins?
+
+I think there should be some web interface like europe-west-1.tardigrade.io.
+
+Running `netstat -tulpn` in the satellite container shows
+
+```text
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name
+tcp        0      0 127.0.0.11:34287        0.0.0.0:*               LISTEN      -
+tcp        0      0 127.0.0.1:37649         0.0.0.0:*               LISTEN      1/satellite
+udp        0      0 127.0.0.11:37895        0.0.0.0:*                           -
+```
+
+even though config.yml has
+
+```yaml
+admin.address: 0.0.0.0:7779
+server.address: 0.0.0.0:7777
+server.private-address: 0.0.0.0:7778
+console.address: 0.0.0.0:10100
+marketing.address: 0.0.0.0:8090
+```
