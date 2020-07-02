@@ -49,14 +49,43 @@ INFO    accounting:rollup       Rollup found no new bw rollups
 INFO    accounting:rollup       RollupStats is empty
 INFO    payments.stripe:clearing        running account balance update cycle
 INFO    payments.stripe:clearing        running transactions update cycle
-INFO    payments.stripe:clearing        running account balance update cycl
+INFO    payments.stripe:clearing        running account balance update cycle
 ```
 
-## Unanswered questions
+## Admin
 
-### How to get nodes to use this satellite?
+Set env var `SATELLITE_ADMIN: 'true'` and configure `admin.address` in `config.yaml`, for example to `0.0.0.0:7779`
 
-### How to "access" the satellite for users and admins?
+Start the satellite, it will say
+
+```log
+INFO    Configuration loaded    {"Location": "/root/.local/share/storj/satellite/config.yaml"}
+INFO    Telemetry enabled
+```
+
+Going to `address:7779` gives
+
+> Authorization not enabled.
+
+What is authorization and how to enable?
+
+## Repair
+
+`SATELLITE_REPAIR`
+
+## API
+
+`SATELLITE_API`
+
+## GC
+
+`SATELLITE_GC`
+
+## How to get nodes to use this satellite?
+
+???
+
+<!-- ### How to "access" the satellite for users and admins?
 
 I think there should be some web interface like europe-west-1.tardigrade.io.
 
@@ -77,4 +106,4 @@ server.address: 0.0.0.0:7777
 server.private-address: 0.0.0.0:7778
 console.address: 0.0.0.0:10100
 marketing.address: 0.0.0.0:8090
-```
+``` -->
