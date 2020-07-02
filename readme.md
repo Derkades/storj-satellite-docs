@@ -36,6 +36,8 @@ INFO    migration.migrate.112   [...]
 INFO    migration.migrate       Database Version        {"version": 112}
 ```
 
+## Running the satellite
+
 Now, restart the satellite without `SATELLITE_MIGRATE`
 
 ```log
@@ -52,7 +54,9 @@ INFO    payments.stripe:clearing        running transactions update cycle
 INFO    payments.stripe:clearing        running account balance update cycle
 ```
 
-## Admin
+The satellite can be started in different "modes". I guess that in production you will run multiple satellite instances at once, for example the main satellite, admin satellite and API satellite continuously and the GC and repair satellite instances on a cronjob.
+
+### Admin
 
 Set env var `SATELLITE_ADMIN: 'true'` and configure `admin.address` in `config.yaml`, for example to `0.0.0.0:7779`
 
@@ -69,19 +73,19 @@ Going to `address:7779` gives
 
 What is authorization and how to enable?
 
-## Repair
+### Repair
 
 `SATELLITE_REPAIR`
 
-## API
+### API
 
 `SATELLITE_API`
 
-## GC
+### Garbage collection
 
 `SATELLITE_GC`
 
-## How to get nodes to use this satellite?
+### Get nodes to use this satellite
 
 ???
 
