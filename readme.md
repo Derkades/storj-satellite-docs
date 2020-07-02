@@ -1,10 +1,12 @@
 # Storj satellite documentation
 
+[Storj labs](https://storj.io) does not provide documentation for running it's satellite software. I would like to run my own satellite, here I am writing down my thoughts as a try to figure out how it works. Please contribute if you know something!!
+
 ## Software and dependencies
 
 Copy the `docker-compose.yaml` file from the repo and optionally adjust some parameters.
 
-For the satellite version tag, go to https://hub.docker.com/r/storjlabs/satellite/tags and use the search box to find the tag for the latest stable release (these correspond which storage node version numbers, see the github releases page)
+For the satellite version tag, go to [docker hub](https://hub.docker.com/r/storjlabs/satellite/tags) and use the search box to find the tag for the latest stable release (these correspond which storage node version numbers, see the github releases page)
 
 Start the satellite to generate folders and configuration files. It will crash because it's not configured yet.
 
